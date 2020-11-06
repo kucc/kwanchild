@@ -57,6 +57,48 @@ export const Content = styled.div`
   margin: 1rem 0rem 1rem 0rem;
 `;
 
+export const HintContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* justify-content: center; */
+  align-items: center;
+  width: 35rem;
+  height: 35rem;
+  font-size: 3rem;
+  color: black;
+  z-index: 100;
+  margin-top: 5rem;
+  border-radius: 5rem;
+  padding: 8rem;
+  font-weight: bold;
+  /* margin: 1rem 0rem 1rem 0rem; */
+`;
+
+export const AnswerWhite = styled.span`
+  color: white;
+  /* display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: center;
+  width: 100%;
+  height: 10rem;
+  margin: 1rem 0rem;
+  font-size: 2rem; */
+`;
+
+export const AnswerBlack = styled.span`
+  color: black;
+  /* display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: center;
+  width: 100%;
+  height: 10rem;
+  margin: 1rem 0rem;
+  font-size: 2rem; */
+`;
+
 export const AnswerContainer = styled.div`
   display: flex;
   flex-direction: row;
