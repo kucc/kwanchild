@@ -5,24 +5,24 @@ import { STATIC_URL } from "../../constant";
 
 import * as S from "./styles";
 
-const Problem1: React.FC = () => {
+const Problem2: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState("");
-  const answer = "은수";
+  const answer = "Ellen";
   let history = useHistory();
 
   const checkAnswer = useCallback(() => {
     if (answer === userAnswer) {
       console.log("correct");
-      history.push("/problem2");
+      history.push("/");
     } else {
       alert("틀렸습니다!");
     }
   }, [userAnswer]);
 
   return (
-    <S.Problem1>
+    <S.Problem2>
       <S.ProblemLayout>
-        <S.Title>문제 1</S.Title>
+        <S.Title>문제 2</S.Title>
         <S.Content>문제 내용이 들어갑니다</S.Content>
         <S.AnswerContainer>
           <S.InputBox
@@ -35,8 +35,8 @@ const Problem1: React.FC = () => {
           <S.SubmitButton onClick={checkAnswer}>입력</S.SubmitButton>
         </S.AnswerContainer>
       </S.ProblemLayout>
-    </S.Problem1>
+    </S.Problem2>
   );
 };
 
-export default Problem1;
+export default Problem2;
