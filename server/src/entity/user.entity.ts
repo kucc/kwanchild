@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("User")
 export default class UserEntity {
@@ -12,5 +12,5 @@ export default class UserEntity {
   startTime?: Date;
 
   @Column({ nullable: true })
-  endTime?: Date;
+  totalTime?: number;
 }

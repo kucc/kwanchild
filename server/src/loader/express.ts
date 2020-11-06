@@ -5,6 +5,7 @@ import UserRouter from "../router/user";
 import createDBConnection from "./database";
 import ProblemRouter from "../router/problem";
 import cookieParser from "cookie-parser";
+import RankRouter from "../router/rank";
 
 export default async ({ app }: { app: express.Application }): Promise<void> => {
   await createDBConnection();
@@ -12,6 +13,8 @@ export default async ({ app }: { app: express.Application }): Promise<void> => {
   app.use(cors());
   app.use(bodyParser.json());
   app.use(cookieParser());
+
+  app.use("/rank", RankRouter);
   app.use("/user", UserRouter);
   app.use("/problem", ProblemRouter);
 

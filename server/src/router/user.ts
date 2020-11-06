@@ -21,6 +21,7 @@ UserRouter.post("/login", async (req: Request, res: Response) => {
 
     if (!isUnique) {
       res.status(400).send({ result: "중복되는 유저네임" });
+      return;
     }
 
     await userService.createUser(username);
