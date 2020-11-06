@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { fadeIn } from "../../animation/keyframe";
 import { THEME_COLOR, BREAKPOINT, STATIC_URL } from "../../constant";
 
-export const Problem1 = styled.div`
+export const Problem3 = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 0rem;

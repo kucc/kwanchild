@@ -1,5 +1,4 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import UserProblemEntity from "./user-problem.entity";
 
 @Entity("Problem")
 export default class ProblemEntity {
@@ -8,7 +7,4 @@ export default class ProblemEntity {
 
   @Column()
   answer!: string;
-
-  @OneToMany(() => UserProblemEntity, (userProblem) => userProblem.problem)
-  userProblem?: UserProblemEntity[];
 }

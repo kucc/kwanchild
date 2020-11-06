@@ -1,5 +1,4 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import UserProblemEntity from "./user-problem.entity";
 
 @Entity("User")
 export default class UserEntity {
@@ -12,6 +11,6 @@ export default class UserEntity {
   @Column({ nullable: true })
   startTime?: Date;
 
-  @OneToMany(() => UserProblemEntity, (userProblem) => userProblem.user)
-  userProblem?: UserProblemEntity[];
+  @Column({ nullable: true })
+  endTime?: Date;
 }
