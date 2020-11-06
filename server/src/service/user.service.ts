@@ -55,6 +55,15 @@ const userService = {
 
     return top10;
   },
+
+  getUserTotalTime: async (name: string) => {
+    const userRepository = getRepository(UserEntity);
+    const user = await userRepository.findOne({ where: { name } });
+
+    if (!user || !user.totalTime) throw new Error("유효하지 않은 요청");
+
+    return user.totalTime;
+  },
 };
 
 export default userService;

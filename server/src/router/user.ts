@@ -3,6 +3,16 @@ import userService from "../service/user.service";
 
 const UserRouter = express.Router();
 
+UserRouter.get("/time", async (req: Request, res: Response) => {
+  const { name } = req.cookies;
+  try {
+    const time = await userService.getUserTotalTime(name);
+    res.json({ time });
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+  }
+});
+
 UserRouter.patch("/start", async (req: Request, res: Response) => {
   const { name } = req.cookies;
   try {
