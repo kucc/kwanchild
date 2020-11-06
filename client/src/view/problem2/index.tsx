@@ -13,7 +13,7 @@ const Problem2: React.FC = () => {
   const checkAnswer = useCallback(() => {
     if (answer === userAnswer) {
       console.log("correct");
-      history.push("/");
+      history.push("/rank");
     } else {
       alert("틀렸습니다!");
     }
