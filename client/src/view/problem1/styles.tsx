@@ -9,23 +9,26 @@ export const Problem1 = styled.div`
   height: 100%;
   margin-top: 0rem;
 
-  background-image: url(${STATIC_URL.BACKGROUND});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(${STATIC_URL.BACKGROUND});
   position: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 export const ProblemLayout = styled.div`
   width: 50%;
-  height: 100%;
+  height: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5rem;
 `;
 
 export const Title = styled.div`
@@ -34,7 +37,7 @@ export const Title = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: black;
   z-index: 100;
