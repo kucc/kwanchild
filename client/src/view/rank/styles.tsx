@@ -102,19 +102,21 @@ export const Ranking = styled.div`
 `;
 
 export const Username = styled.div`
-  width: 15rem;
+  width: 23rem;
   font-size: 2rem;
   margin: 0rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 export const TotalTime = styled.div`
-  width: 20rem;
+  width: 10rem;
   font-size: 2rem;
   margin: 0rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 export const Button = styled.button`

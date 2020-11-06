@@ -14,7 +14,6 @@ const RankList: React.FC = () => {
         method: "GET",
       });
       if (!result.ok) {
-        alert("서버 죽음");
         return;
       }
       const rankList = await result.json();
