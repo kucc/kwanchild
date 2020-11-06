@@ -36,7 +36,7 @@ UserRouter.post("/login", async (req: Request, res: Response) => {
 
     await userService.createUser(username);
 
-    res.cookie("name", username);
+    res.cookie("name", username, { httpOnly: true });
     res.send({ result: "success" });
   } catch (e) {
     res.status(500).send({ error: e.message });
