@@ -3,10 +3,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import UserRouter from "../router/user";
 import createDBConnection from "./database";
-import dotenv from "dotenv";
 
 export default async ({ app }: { app: express.Application }): Promise<void> => {
-  dotenv.config();
   await createDBConnection();
 
   app.use(cors());

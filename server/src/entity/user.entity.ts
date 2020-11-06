@@ -9,6 +9,9 @@ export default class UserEntity {
   @Column()
   name!: string;
 
+  @Column()
+  startTime!: Date;
+
   @OneToMany(() => UserProblemEntity, (userProblem) => userProblem.user)
   userProblem?: UserProblemEntity[];
 }
