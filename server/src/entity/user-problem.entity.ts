@@ -10,6 +10,9 @@ export default class UserProblemEntity {
   @PrimaryColumn()
   problemId!: number;
 
+  @Column()
+  solvedAt!: Date;
+
   @ManyToOne(() => UserEntity, (user) => user.userProblem)
   @JoinColumn({
     name: "userId",

@@ -7,7 +7,7 @@ export default class ProblemEntity {
   id!: number;
 
   @Column()
-  solvedAt!: Date;
+  answer!: string;
 
   @OneToMany(() => UserProblemEntity, (userProblem) => userProblem.problem)
   userProblem?: UserProblemEntity[];

@@ -4,9 +4,9 @@ import userService from "../service/user.service";
 const UserRouter = express.Router();
 
 UserRouter.patch("/start", async (req: Request, res: Response) => {
-  const username = req.cookies("name");
+  const { name } = req.cookies;
   try {
-    await userService.gameStart(username);
+    await userService.gameStart(name);
     res.send("시작!!");
   } catch (e) {
     console.log(e.message);
