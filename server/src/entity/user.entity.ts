@@ -9,8 +9,8 @@ export default class UserEntity {
   @Column()
   name!: string;
 
-  @Column()
-  startTime!: Date;
+  @Column({ nullable: true })
+  startTime?: Date;
 
   @OneToMany(() => UserProblemEntity, (userProblem) => userProblem.user)
   userProblem?: UserProblemEntity[];

@@ -3,8 +3,19 @@ import userService from "../service/user.service";
 
 const UserRouter = express.Router();
 
+UserRouter.patch("/start", async (req: Request, res: Response) => {
+  const username = req.cookies("name");
+  try {
+    await userService.gameStart(username);
+    res.send("시작!!");
+  } catch (e) {
+    console.log(e.message);
+    res.status(400).send({ error: e.message });
+  }
+});
+
 UserRouter.post("/login", async (req: Request, res: Response) => {
-  const { username, startTime } = req.body;
+  const { username } = req.body;
   try {
     const isUnique = await userService.isUniqueUser(username);
 
@@ -12,7 +23,7 @@ UserRouter.post("/login", async (req: Request, res: Response) => {
       res.status(400).send({ result: "중복되는 유저네임" });
     }
 
-    await userService.createUser(username, startTime);
+    await userService.createUser(username);
 
     res.cookie("name", username);
     res.send({ result: "success" });
