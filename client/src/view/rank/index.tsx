@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
 
 import RankItem from "../../component/rank-item";
-
+import RankList from "../../component/rank-list";
 import * as S from "./styles";
 
 const Rank: React.FC = () => {
@@ -25,9 +25,7 @@ const Rank: React.FC = () => {
           <S.Username>닉네임</S.Username>
           <S.TotalTime>걸린 시간</S.TotalTime>
         </S.Header>
-        <RankItem id={1} name="홍은수" time="80초" />
-        <RankItem id={2} name="홍은수" time="90초" />
-        <RankItem id={3} name="홍은수" time="100초" />
+        <RankList />
       </S.RankBox>
       <S.Button onClick={toMain}>처음으로</S.Button>
     </S.Rank>

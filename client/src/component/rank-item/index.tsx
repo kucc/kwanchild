@@ -4,12 +4,12 @@ import { STATIC_URL } from "../../constant";
 import * as S from "./styles";
 
 interface RankProps {
-  id: number;
+  ranking: number;
   name: string;
   time: string;
 }
 
-const RankItem: React.FC<RankProps> = ({ id, name, time }: RankProps) => {
+const RankItem: React.FC<RankProps> = ({ ranking, name, time }: RankProps) => {
   const insertRankImg = (id: number) => {
     switch (id) {
       case 1:
@@ -25,7 +25,7 @@ const RankItem: React.FC<RankProps> = ({ id, name, time }: RankProps) => {
 
   return (
     <S.RankItem>
-      <S.Ranking>{insertRankImg(id)}</S.Ranking>
+      <S.Ranking>{insertRankImg(ranking)}</S.Ranking>
       <S.Username>{name}</S.Username>
       <S.TotalTime>{time}</S.TotalTime>
     </S.RankItem>
