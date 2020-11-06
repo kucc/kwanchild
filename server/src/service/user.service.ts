@@ -25,7 +25,9 @@ const userService = {
     const user = await userRepository.findOne({ where: { name } });
 
     if (!user) throw new Error("너 누구야");
+
     const updatedUser = userRepository.merge(user, { startTime: new Date() });
+    console.log(updatedUser);
     await userRepository.save(updatedUser);
   },
 };
