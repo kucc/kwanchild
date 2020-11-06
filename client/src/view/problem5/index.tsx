@@ -1,36 +1,49 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { STATIC_URL } from "../../constant";
-import PAGE_URL from "../../page-config";
 
 import * as S from "./styles";
 
-const Problem3: React.FC = () => {
+const Problem5: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState("");
-  const answer = "hungry";
+  const answer = "2";
   let history = useHistory();
+
+  const endGame = useCallback(async () => {
+    const result = await fetch("/problem/done", {
+      method: "PATCH",
+    });
+
+    if (!result.ok) {
+      alert("뭔가 단단히 잘못됨");
+      return;
+    }
+
+    history.push("/rank");
+  }, []);
 
   const checkAnswer = useCallback(() => {
     if (answer === userAnswer) {
       console.log("correct");
-      history.push(PAGE_URL.prob4);
+      endGame();
     } else {
       alert("틀렸습니다!");
     }
   }, [userAnswer]);
 
   return (
-    <S.Problem3>
+    <S.Problem5>
       <S.ProblemLayout>
         <S.Title>문제 3</S.Title>
         <S.Content>
-          지수는 방에서 온라인 강의를 듣고 있었다. 교수님의 설명을 들으면서
-          워드에 필기를 하다가 꾸벅꾸벅 꿈나라로 가려는 순간 ... 갑자기 창문으로
-          고양이가 뛰어 들어왔다 ! 고양이는 노트북 위를 파바밧 돌아다니기
-          시작했다. 고양이가 남긴 자국은 다음과 같다. 이 고양이는 무엇을 말하고
-          싶었던 것일까? 고양이의 마음을 읽어 보자, meow !
-          <S.HintContainer>.... ..m m. mm. .m. m.mm</S.HintContainer>
+          강관훈은 과외생에게 이상한 사칙연산을 가르치는 중이다. <br />
+          이 사람이 말하고 싶은 사칙연산은 대체 뭘까? <br />
+          관관훈의 후예들도 그게 궁금한 부분이다.
+          <S.HintContainer>
+            <S.HintRow>10 – 6 = 0</S.HintRow>
+            <S.HintRow> 8 + 10 = 3</S.HintRow>
+            <S.HintRow> 8 – 5 = 2</S.HintRow>
+            <S.HintRow> 10 + 12 + 6 = ?</S.HintRow>
+          </S.HintContainer>
         </S.Content>
         <S.AnswerContainer>
           <S.InputBox
@@ -43,8 +56,8 @@ const Problem3: React.FC = () => {
           <S.SubmitButton onClick={checkAnswer}>입력</S.SubmitButton>
         </S.AnswerContainer>
       </S.ProblemLayout>
-    </S.Problem3>
+    </S.Problem5>
   );
 };
 
-export default Problem3;
+export default Problem5;

@@ -3,6 +3,7 @@ import { STATIC_URL } from "../../constant";
 import * as S from "./styles";
 import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
+import PAGE_URL from "../../page-config";
 
 const Main: React.FC = () => {
   const [isStart, setStart] = useState(false);
@@ -52,7 +53,7 @@ const Main: React.FC = () => {
       return;
     }
 
-    history.push("/problem1");
+    history.push(PAGE_URL.prob1);
   }, []);
 
   return (

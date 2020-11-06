@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect, KeyboardEvent } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
+import PAGE_URL from "../../page-config";
 
 import * as S from "./styles";
 
@@ -13,7 +14,7 @@ const Problem1: React.FC = () => {
   const checkAnswer = useCallback(() => {
     if (answer === userAnswer) {
       console.log("correct");
-      history.push("/problem2");
+      history.push(PAGE_URL.prob2);
     } else {
       alert("틀렸습니다!");
     }

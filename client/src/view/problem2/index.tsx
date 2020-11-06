@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
+import PAGE_URL from "../../page-config";
 
 import * as S from "./styles";
 
@@ -9,7 +10,7 @@ const Problem2: React.FC = () => {
   let history = useHistory();
 
   const goNext = useCallback(() => {
-    history.push("/problem3");
+    history.push(PAGE_URL.prob3);
   }, []);
 
   return (
