@@ -16,7 +16,7 @@ const userService = {
     const userRepository = getRepository(UserEntity);
     const user = await userRepository.findOne({ where: { name: username } });
 
-    return user ? true : false;
+    return user ? false : true;
   },
 
   gameStart: async (name: string) => {
