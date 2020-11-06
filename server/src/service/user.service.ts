@@ -49,6 +49,7 @@ const userService = {
     const userRepository = getRepository(UserEntity);
     const top10 = userRepository
       .createQueryBuilder("User")
+      .where("User.totalTime IS NOT NULL")
       .orderBy("User.totalTime", "ASC")
       .limit(10)
       .getMany();
