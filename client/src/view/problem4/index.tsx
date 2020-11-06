@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
+import PAGE_URL from "../../page-config";
 
 import * as S from "./styles";
 
@@ -13,7 +14,7 @@ const Problem4: React.FC = () => {
   const checkAnswer = useCallback(() => {
     if (answer === userAnswer) {
       console.log("correct");
-      history.push("/problem5");
+      history.push(PAGE_URL.prob5);
     } else {
       alert("틀렸습니다!");
     }
@@ -26,11 +27,11 @@ const Problem4: React.FC = () => {
         <S.Content>
           나를 찾아 봐!
           <S.HintContainer>
-            I l I l I l I l I I I l I I I <br />
-            I I l l I l I l I l l l I l l <br />
-            I l l l I l I l I l l l I l l <br />
-            I I l l I l I l I l l l I l l <br />
-            I l I l I I I l I I I l I I I <br />
+            {`I   l   I   l   I   l   I   l   I   I   I   l   I   I   I`} <br />
+            {`I   I   l   l   I   l   I   l   I   l   l   l   I   l   l`} <br />
+            {`I   l   l   l   I   l   I   l   I   l   l   l   I   l   l`} <br />
+            {`I   I   l   l   I   l   I   l   I   l   l   l   I   l   l`} <br />
+            {`I   l   I   l   I   I   I   l   I   I   I   l   I   I   I`} <br />
           </S.HintContainer>
         </S.Content>
         <S.AnswerContainer>

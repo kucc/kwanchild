@@ -75,6 +75,7 @@ export const HintContainer = styled.div`
   /* padding: 10rem; */
   font-weight: bold;
   /* margin: 1rem 0rem 1rem 0rem; */
+  letter-spacing: 0.4rem;
 `;
 
 export const AnswerContainer = styled.div`

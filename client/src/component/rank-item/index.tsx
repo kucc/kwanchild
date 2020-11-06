@@ -10,8 +10,8 @@ interface RankProps {
 }
 
 const RankItem: React.FC<RankProps> = ({ ranking, name, time }: RankProps) => {
-  const insertRankImg = (id: number) => {
-    switch (id) {
+  const insertRankImg = (ranking: number) => {
+    switch (ranking) {
       case 1:
         return <img src={STATIC_URL.GOLD_MEDAL} alt="first" />;
       case 2:
@@ -19,7 +19,7 @@ const RankItem: React.FC<RankProps> = ({ ranking, name, time }: RankProps) => {
       case 3:
         return <img src={STATIC_URL.BRONZE_MEDAL} alt="third" />;
       default:
-        return { id };
+        return <div>{ranking}</div>;
     }
   };
 

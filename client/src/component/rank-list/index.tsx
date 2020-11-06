@@ -4,7 +4,7 @@ import * as S from "./styles";
 
 interface Rank {
   name: string;
-  time: number;
+  totalTime: number;
 }
 const RankList: React.FC = () => {
   const [ranks, setRank] = useState([]);
@@ -23,10 +23,17 @@ const RankList: React.FC = () => {
     };
     getUserRanking();
   }, []);
+
   return (
     <S.RankList>
-      {ranks.map((rank: Rank, idx) => {
-        <RankItem ranking={idx} name={rank.name} time={`${rank.time}초`} />;
+      {ranks?.map((rank: Rank, idx) => {
+        return (
+          <RankItem
+            ranking={idx + 1}
+            name={rank.name}
+            time={`${rank.totalTime}초`}
+          />
+        );
       })}
     </S.RankList>
   );
