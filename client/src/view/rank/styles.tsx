@@ -37,6 +37,29 @@ export const Title = styled.div`
   }
 `;
 
+export const MyRank = styled.div`
+  width: 50rem;
+  height: 7rem;
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 3rem 0rem 0rem 0rem;
+
+  border: 2px solid black;
+  border-radius: 1rem;
+`;
+
+export const MyRecord = styled.div`
+  font-size: 1.9rem;
+  margin-right: 1rem;
+`;
+
+export const MyTime = styled.div`
+  font-size: 1.9rem;
+`;
+
 export const RankBox = styled.div`
   width: 50rem;
   height: 50rem;
@@ -65,15 +88,6 @@ export const Header = styled.div`
   background-color: ${THEME_COLOR.GRAYER};
 `;
 
-// export const RankItem = styled.div`
-//   width: 100%;
-//   height: 3rem;
-//   font-size: 2rem;
-//   margin-bottom: 1rem;
-
-//   display: flex;
-//   flex-direction: row;
-// `;
 export const Ranking = styled.div`
   width: 5rem;
   font-size: 2rem;

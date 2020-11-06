@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, KeyboardEvent } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
@@ -13,12 +13,34 @@ const Rank: React.FC = () => {
     history.push("/");
   };
 
+  const [userTime, setUserTime] = useState(0);
+  useEffect(() => {
+    const getUserTime = async () => {
+      const result = await fetch("/time/:user", {
+        method: "GET",
+      });
+
+      if (!result.ok) {
+        alert("서버 죽음");
+        return;
+      }
+      const time = await result.json();
+      setUserTime(time);
+    };
+
+    getUserTime();
+  }, []);
+
   return (
     <S.Rank>
       <S.Title>
         랭크
         <img src={STATIC_URL.CROWN} alt="crown" />
       </S.Title>
+      <S.MyRank>
+        <S.MyRecord>내 기록: </S.MyRecord>
+        <S.MyTime>{`${userTime} 초`}</S.MyTime>
+      </S.MyRank>
       <S.RankBox>
         <S.Header>
           <S.Ranking>순위</S.Ranking>
