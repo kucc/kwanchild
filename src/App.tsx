@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-const Main = lazy(() => import("./view/main"));
+import Main from "./view/main";
 
 function App() {
   return (
