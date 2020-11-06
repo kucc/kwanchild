@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, KeyboardEvent } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
@@ -30,6 +30,9 @@ const Problem1: React.FC = () => {
             onChange={(e) => {
               setUserAnswer(e.target.value);
               // console.log(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") checkAnswer();
             }}
           ></S.InputBox>
           <S.SubmitButton onClick={checkAnswer}>입력</S.SubmitButton>
