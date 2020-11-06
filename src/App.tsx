@@ -6,13 +6,15 @@ import {
   Redirect,
 } from "react-router-dom";
 
-const Main = lazy(() => import("./view/main"));
+import Main from "./view/main";
+import Problem1 from "./view/problem1";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact component={Main} />
+        <Route path="/problem1" exact component={Problem1} />
         <Redirect from="*" to="/" />
       </Switch>
     </Router>
