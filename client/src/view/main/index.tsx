@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Modal from "../../component/modal";
 import { middleware } from "yargs";
+import PAGE_URL from "../../page-config";
 
 const Main: React.FC = () => {
   const [isStart, setStart] = useState(false);
@@ -56,7 +57,7 @@ const Main: React.FC = () => {
       return;
     }
 
-    history.push("/problem1");
+    history.push(PAGE_URL.prob1);
   }, []);
 
   return (

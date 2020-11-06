@@ -29,6 +29,7 @@ UserRouter.post("/login", async (req: Request, res: Response) => {
   try {
     const isUnique = await userService.isUniqueUser(username);
 
+    console.log(isUnique);
     if (!isUnique) {
       res.status(400).send({ result: "중복되는 유저네임" });
       return;

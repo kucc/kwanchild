@@ -1,19 +1,17 @@
-import { stringify } from "querystring";
-import React, { useState, useCallback, useEffect, KeyboardEvent } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { isRegExp } from "util";
 import { STATIC_URL } from "../../constant";
 import PAGE_URL from "../../page-config";
 
 import * as S from "./styles";
 
-const Problem1: React.FC = () => {
+const Problem4: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState("");
   let history = useHistory();
 
   const checkAnswer = useCallback(async () => {
-    const result = await fetch("/problem/1", {
+    const result = await fetch("/problem/4", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -27,22 +25,21 @@ const Problem1: React.FC = () => {
       alert("틀렸습니다!");
       return;
     }
-    history.push(PAGE_URL.prob2);
+    history.push(PAGE_URL.prob5);
   }, [userAnswer]);
+
   return (
-    <S.Problem1>
+    <S.Problem4>
       <S.ProblemLayout>
-        <S.Title>문제 1</S.Title>
+        <S.Title>문제 4</S.Title>
         <S.Content>
-          <div>It's not always what you see</div>
+          나를 찾아 봐!
           <S.HintContainer>
-            <S.AnswerBlack>여 부 정 눈 빛</S.AnswerBlack>
-            <S.AnswerWhite>정답은 ...</S.AnswerWhite>
-            <S.AnswerBlack>기 석 답 햇 쪽</S.AnswerBlack>
-            <S.AnswerWhite>바로 바로 ...</S.AnswerWhite>
-            <S.AnswerBlack>왼 비 은 오 른 </S.AnswerBlack>
-            <S.AnswerWhite>임지수</S.AnswerWhite>
-            <S.AnswerBlack></S.AnswerBlack>
+            {`I   l   I   l   I   l   I   l   I   I   I   l   I   I   I`} <br />
+            {`I   I   l   l   I   l   I   l   I   l   l   l   I   l   l`} <br />
+            {`I   l   l   l   I   l   I   l   I   l   l   l   I   l   l`} <br />
+            {`I   I   l   l   I   l   I   l   I   l   l   l   I   l   l`} <br />
+            {`I   l   I   l   I   I   I   l   I   I   I   l   I   I   I`} <br />
           </S.HintContainer>
         </S.Content>
         <S.AnswerContainer>
@@ -50,6 +47,7 @@ const Problem1: React.FC = () => {
             placeholder="정답을 입력하세요."
             onChange={(e) => {
               setUserAnswer(e.target.value);
+              // console.log(e.target.value);
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") checkAnswer();
@@ -58,8 +56,8 @@ const Problem1: React.FC = () => {
           <S.SubmitButton onClick={checkAnswer}>입력</S.SubmitButton>
         </S.AnswerContainer>
       </S.ProblemLayout>
-    </S.Problem1>
+    </S.Problem4>
   );
 };
 
-export default Problem1;
+export default Problem4;

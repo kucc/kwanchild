@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+page-config.ts
+
 # testing
 /coverage
 
