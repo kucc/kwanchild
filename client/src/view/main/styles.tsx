@@ -18,15 +18,21 @@ export const Main = styled.div`
   background-size: cover;
 `;
 
+export const ContentContainer = styled.div`
+  width: 50rem;
+  height: 5rem;
+  background-color: black;
+`;
+
 export const Title = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: bold;
-  margin-top: 6rem;
+  margin-top: 7rem;
 `;
 
 export const ButtonContainer = styled.div`
@@ -51,11 +57,7 @@ export const Button = styled.button`
   letter-spacing: 0.3rem;
   font-weight: 700;
   transition: all 0.2s ease;
-  /* cursor: pointer; */
-  /* &:hover {
-    opacity: 0.5;
-    transform: scale(0.9);
-  } */
+  margin-top: 2rem;
 `;
 
 export const NameContainer = styled.div`
@@ -89,4 +91,82 @@ export const NameConfirm = styled.button`
   color: white;
   padding: 0.8rem 1rem;
   margin-bottom: 1rem;
+`;
+
+export const ModalDevContainer = styled.div`
+  width: 100%;
+  padding: 3rem 2rem;
+  height: 36rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+`;
+
+export const ModalNameContainer = styled.div`
+  height: 4rem;
+  display: flex;
+  width: 100%;
+`;
+
+export const ModalName = styled.div`
+  width: 100%;
+  height: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+`;
+
+export const ModalButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+interface ModalButtonProps {
+  search?: boolean;
+}
+
+export const ModalConfirmButton = styled.button<ModalButtonProps>`
+  width: 6rem;
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: inherit;
+
+  color: ${(props) => (props.search ? `${THEME_COLOR.PRIMARY}` : `black`)};
+
+  font-size: 1.6rem;
+`;
+
+export const UrlContainer = styled.div`
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export const GitIcon = styled.img`
+  width: 1.7rem;
+  height: 1.5rem;
+  margin-right: 0.8rem;
+`;
+
+export const GitUrl = styled.a`
+  font-size: 1.7rem;
+  color: black;
+  text-decoration: none;
+`;
+
+export const MemberContainer = styled.div`
+  width: 80%;
+  padding: 0.6rem;
 `;

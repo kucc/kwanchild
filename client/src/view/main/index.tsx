@@ -3,6 +3,8 @@ import { STATIC_URL } from "../../constant";
 import * as S from "./styles";
 import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Modal from "../../component/modal";
+import { middleware } from "yargs";
 import PAGE_URL from "../../page-config";
 
 const Main: React.FC = () => {
@@ -11,6 +13,8 @@ const Main: React.FC = () => {
 
   const updateName = useCallback((e) => setName(e.target.value), []);
   let history = useHistory();
+  const [showDevModal, setShowDevModal] = useState(false);
+  const toggleDevModal = () => setShowDevModal(!showDevModal);
 
   const submitName = useCallback(async () => {
     const response = await fetch(`user/login`, {
@@ -57,27 +61,67 @@ const Main: React.FC = () => {
   }, []);
 
   return (
-    <S.Main>
-      <S.Title>문제적 KUCC</S.Title>
-      <S.ButtonContainer>
-        {isStart ? (
-          <S.Button onClick={confirmStart}>시작하기</S.Button>
-        ) : (
-          <S.NameContainer>
-            <S.NameInput
-              onChange={updateName}
-              value={name}
-              placeholder="닉네임을 입력해 주세요"
-              onKeyDown={(e) => {
-                if (e.key === "Enter") confirmName();
-              }}
-            ></S.NameInput>
-            <S.NameConfirm onClick={confirmName}>확인</S.NameConfirm>
-          </S.NameContainer>
-        )}
-        <S.Button>개발자들</S.Button>
-      </S.ButtonContainer>
-    </S.Main>
+    <>
+      <S.Main>
+        <S.Title>문제적 KUCC</S.Title>
+        <S.ButtonContainer>
+          {isStart ? (
+            <S.Button onClick={confirmStart}>시작하기</S.Button>
+          ) : (
+            <S.NameContainer>
+              <S.NameInput
+                onChange={updateName}
+                value={name}
+                placeholder="닉네임을 입력해 주세요"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") confirmName();
+                }}
+              ></S.NameInput>
+              <S.NameConfirm onClick={confirmName}>확인</S.NameConfirm>
+            </S.NameContainer>
+          )}
+          <S.Button onClick={toggleDevModal}>개발자들</S.Button>
+        </S.ButtonContainer>
+      </S.Main>
+      <Modal show={showDevModal} toggleModal={toggleDevModal}>
+        <S.ModalDevContainer>
+          <S.MemberContainer>
+            <S.ModalNameContainer>
+              <S.ModalName>박진용</S.ModalName>
+            </S.ModalNameContainer>
+            <S.UrlContainer>
+              <S.GitIcon src={STATIC_URL.GITHUB_ICON}></S.GitIcon>
+              <S.GitUrl>https://github.com/namda-on</S.GitUrl>
+            </S.UrlContainer>
+          </S.MemberContainer>
+          <S.MemberContainer>
+            {" "}
+            <S.ModalNameContainer>
+              <S.ModalName>임지수</S.ModalName>
+            </S.ModalNameContainer>
+            <S.UrlContainer>
+              <S.GitIcon src={STATIC_URL.GITHUB_ICON}></S.GitIcon>
+              <S.GitUrl>https://github.com/limjisuu</S.GitUrl>
+            </S.UrlContainer>
+          </S.MemberContainer>
+          <S.MemberContainer>
+            <S.ModalNameContainer>
+              <S.ModalName>홍은수</S.ModalName>
+            </S.ModalNameContainer>
+            <S.UrlContainer>
+              <S.GitIcon src={STATIC_URL.GITHUB_ICON}></S.GitIcon>
+              <S.GitUrl>https://github.com/deltaori0</S.GitUrl>
+            </S.UrlContainer>
+          </S.MemberContainer>
+
+          <S.ModalButtonContainer>
+            <S.ModalConfirmButton search onClick={toggleDevModal}>
+              확인
+            </S.ModalConfirmButton>
+          </S.ModalButtonContainer>
+        </S.ModalDevContainer>
+      </Modal>
+    </>
   );
 };
 
