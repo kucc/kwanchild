@@ -31,4 +31,14 @@ ProblemRouter.post("/:problemId", async (req: Request, res: Response) => {
   }
 });
 
+ProblemRouter.post("/", async (req: Request, res: Response) => {
+  const { answer } = req.body;
+  try {
+    await problemService.createProblem(answer);
+    res.send("ok");
+  } catch (e) {
+    res.status(400).send({ error: "ㅈㅅㅈㅅ" });
+  }
+});
+
 export default ProblemRouter;
