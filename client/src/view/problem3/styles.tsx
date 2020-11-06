@@ -37,7 +37,7 @@ export const Title = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   color: black;
   z-index: 100;
@@ -55,6 +55,26 @@ export const Content = styled.div`
   color: black;
   z-index: 100;
   margin: 1rem 0rem 1rem 0rem;
+  padding: 5rem;
+  line-height: 150%;
+`;
+
+export const HintContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  width: 38rem;
+  height: 38rem;
+  font-size: 2rem;
+  color: black;
+  z-index: 100;
+  margin-top: 5rem;
+  border-radius: 5rem;
+  /* padding: 10rem; */
+  font-weight: bold;
+  /* margin: 1rem 0rem 1rem 0rem; */
 `;
 
 export const AnswerContainer = styled.div`

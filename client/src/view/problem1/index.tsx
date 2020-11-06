@@ -18,7 +18,6 @@ const Problem1: React.FC = () => {
       alert("틀렸습니다!");
     }
   }, [userAnswer]);
-
   return (
     <S.Problem1>
       <S.ProblemLayout>
