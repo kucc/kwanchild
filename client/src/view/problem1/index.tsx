@@ -39,7 +39,6 @@ const Problem1: React.FC = () => {
             placeholder="정답을 입력하세요."
             onChange={(e) => {
               setUserAnswer(e.target.value);
-              // console.log(e.target.value);
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") checkAnswer();
