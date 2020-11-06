@@ -14,9 +14,9 @@ export default async ({ app }: { app: express.Application }): Promise<void> => {
   app.use(bodyParser.json());
   app.use(cookieParser());
 
-  app.use("/rank", RankRouter);
-  app.use("/user", UserRouter);
-  app.use("/problem", ProblemRouter);
+  app.use("/api/rank", RankRouter);
+  app.use("/api/user", UserRouter);
+  app.use("/api/problem", ProblemRouter);
 
   app.use((error: any, req: Request, res: Response, next: NextFunction) => {
     console.error(error);
