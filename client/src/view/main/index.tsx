@@ -38,6 +38,20 @@ const Main: React.FC = () => {
   }, [name]);
 
   const confirmStart = useCallback(async () => {
+    const response = await fetch(`user/start`, {
+      method: "PATCH",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      console.log(response.body);
+      alert("ㅋㅋ?");
+      return;
+    }
+
     history.push("/problem1");
   }, []);
 
