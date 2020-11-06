@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { fadeIn } from "../../animation/keyframe";
 import { THEME_COLOR, BREAKPOINT, STATIC_URL } from "../../constant";
 
-export const Problem2 = styled.div`
+export const Problem3 = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 0rem;
@@ -92,19 +92,6 @@ export const SubmitButton = styled.button`
   border-radius: 0.5rem;
   color: white;
   font-size: 1.8rem;
-`;
-
-export const Answer = styled.button`
-  background-color: #b2b2b2;
-  width: 7rem;
-  height: 7rem;
-  display: flex;
-  border: 1px solid #b2b2b2;
-  color: #b2b2b2;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  cursor: default;
 `;
 
 export const NextPage = styled(Link)``;
