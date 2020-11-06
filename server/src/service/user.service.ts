@@ -7,7 +7,6 @@ const userService = {
     const user = userRepository.create({
       name: username,
     });
-    console.log(user);
     const createdUser = await userRepository.save(user);
 
     return createdUser;
@@ -15,7 +14,7 @@ const userService = {
 
   isUniqueUser: async (username: string) => {
     const userRepository = getRepository(UserEntity);
-    const user = userRepository.findOne({ where: { name: username } });
+    const user = await userRepository.findOne({ where: { name: username } });
 
     return user ? true : false;
   },
