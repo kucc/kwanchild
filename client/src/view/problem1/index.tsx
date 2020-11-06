@@ -13,7 +13,7 @@ const Problem1: React.FC = () => {
   let history = useHistory();
 
   const checkAnswer = useCallback(async () => {
-    const result = await fetch("/problem/1", {
+    const result = await fetch("api/problem/1", {
       method: "POST",
       credentials: "include",
       headers: {

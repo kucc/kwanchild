@@ -17,7 +17,7 @@ const Main: React.FC = () => {
   const toggleDevModal = () => setShowDevModal(!showDevModal);
 
   const submitName = useCallback(async () => {
-    const response = await fetch(`user/login`, {
+    const response = await fetch(`api/user/login`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -43,7 +43,7 @@ const Main: React.FC = () => {
   }, [name]);
 
   const confirmStart = useCallback(async () => {
-    const response = await fetch(`user/start`, {
+    const response = await fetch(`api/user/start`, {
       method: "PATCH",
       credentials: "include",
       headers: {

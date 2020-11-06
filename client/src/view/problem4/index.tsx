@@ -11,7 +11,7 @@ const Problem4: React.FC = () => {
   let history = useHistory();
 
   const checkAnswer = useCallback(async () => {
-    const result = await fetch("/problem/4", {
+    const result = await fetch("api/problem/4", {
       method: "POST",
       credentials: "include",
       headers: {

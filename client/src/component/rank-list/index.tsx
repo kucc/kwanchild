@@ -10,7 +10,7 @@ const RankList: React.FC = () => {
   const [ranks, setRank] = useState([]);
   useEffect(() => {
     const getUserRanking = async () => {
-      const result = await fetch("/rank", {
+      const result = await fetch("/api/rank", {
         method: "GET",
       });
       if (!result.ok) {

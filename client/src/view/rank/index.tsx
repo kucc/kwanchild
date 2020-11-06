@@ -17,7 +17,7 @@ const Rank: React.FC = () => {
 
   useEffect(() => {
     const getUserTime = async () => {
-      const result = await fetch("/user/time", {
+      const result = await fetch("api/user/time", {
         method: "GET",
       });
 

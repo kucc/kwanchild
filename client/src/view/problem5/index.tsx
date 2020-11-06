@@ -8,7 +8,7 @@ const Problem5: React.FC = () => {
   let history = useHistory();
 
   const endGame = useCallback(async () => {
-    const result = await fetch("/problem/done", {
+    const result = await fetch("api/problem/done", {
       method: "PATCH",
     });
 
@@ -21,7 +21,7 @@ const Problem5: React.FC = () => {
   }, []);
 
   const checkAnswer = useCallback(async () => {
-    const result = await fetch("/problem/5", {
+    const result = await fetch("api/problem/5", {
       method: "POST",
       credentials: "include",
       headers: {
