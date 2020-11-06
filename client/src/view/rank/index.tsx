@@ -14,9 +14,10 @@ const Rank: React.FC = () => {
   };
 
   const [userTime, setUserTime] = useState(0);
+
   useEffect(() => {
     const getUserTime = async () => {
-      const result = await fetch("/time/:user", {
+      const result = await fetch("/user/time", {
         method: "GET",
       });
 
@@ -24,7 +25,7 @@ const Rank: React.FC = () => {
         alert("서버 죽음");
         return;
       }
-      const time = await result.json();
+      const { time } = await result.json();
       setUserTime(time);
     };
 

@@ -39,6 +39,9 @@ const Problem3: React.FC = () => {
               setUserAnswer(e.target.value);
               // console.log(e.target.value);
             }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") checkAnswer();
+            }}
           ></S.InputBox>
           <S.SubmitButton onClick={checkAnswer}>입력</S.SubmitButton>
         </S.AnswerContainer>

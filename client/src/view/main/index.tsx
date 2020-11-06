@@ -68,6 +68,9 @@ const Main: React.FC = () => {
               onChange={updateName}
               value={name}
               placeholder="닉네임을 입력해 주세요"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") confirmName();
+              }}
             ></S.NameInput>
             <S.NameConfirm onClick={confirmName}>확인</S.NameConfirm>
           </S.NameContainer>
