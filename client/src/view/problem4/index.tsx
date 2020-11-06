@@ -2,21 +2,30 @@ import React, { useState, useCallback, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
+import PAGE_URL from "../../page-config";
 
 import * as S from "./styles";
 
 const Problem4: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState("");
-  const answer = "kucc";
   let history = useHistory();
 
-  const checkAnswer = useCallback(() => {
-    if (answer === userAnswer) {
-      console.log("correct");
-      history.push("/problem5");
-    } else {
+  const checkAnswer = useCallback(async () => {
+    const result = await fetch("/problem/4", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        answer: userAnswer,
+      }),
+    });
+    if (!result.ok) {
       alert("틀렸습니다!");
+      return;
     }
+    history.push(PAGE_URL.prob5);
   }, [userAnswer]);
 
   return (

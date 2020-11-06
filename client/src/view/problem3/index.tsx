@@ -8,16 +8,24 @@ import * as S from "./styles";
 
 const Problem3: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState("");
-  const answer = "hungry";
   let history = useHistory();
 
-  const checkAnswer = useCallback(() => {
-    if (answer === userAnswer) {
-      console.log("correct");
-      history.push(PAGE_URL.prob4);
-    } else {
+  const checkAnswer = useCallback(async () => {
+    const result = await fetch("/problem/3", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        answer: userAnswer,
+      }),
+    });
+    if (!result.ok) {
       alert("틀렸습니다!");
+      return;
     }
+    history.push(PAGE_URL.prob4);
   }, [userAnswer]);
 
   return (

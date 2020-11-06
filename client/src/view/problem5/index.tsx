@@ -5,7 +5,6 @@ import * as S from "./styles";
 
 const Problem5: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState("");
-  const answer = "2";
   let history = useHistory();
 
   const endGame = useCallback(async () => {
@@ -21,13 +20,22 @@ const Problem5: React.FC = () => {
     history.push("/rank");
   }, []);
 
-  const checkAnswer = useCallback(() => {
-    if (answer === userAnswer) {
-      console.log("correct");
-      endGame();
-    } else {
+  const checkAnswer = useCallback(async () => {
+    const result = await fetch("/problem/5", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        answer: userAnswer,
+      }),
+    });
+    if (!result.ok) {
       alert("틀렸습니다!");
+      return;
     }
+    endGame();
   }, [userAnswer]);
 
   return (
