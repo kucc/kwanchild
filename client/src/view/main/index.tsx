@@ -80,7 +80,7 @@ const Main: React.FC = () => {
               <S.NameConfirm onClick={confirmName}>확인</S.NameConfirm>
             </S.NameContainer>
           )}
-          <S.Button onClick={toggleDevModal}>개발자들</S.Button>
+          <S.Button onClick={toggleDevModal}>??</S.Button>
         </S.ButtonContainer>
       </S.Main>
       <Modal show={showDevModal} toggleModal={toggleDevModal}>
