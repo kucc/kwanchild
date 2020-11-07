@@ -41,7 +41,7 @@ const Problem5: React.FC = () => {
   return (
     <S.Problem5>
       <S.ProblemLayout>
-        <S.Title>문제 3</S.Title>
+        <S.Title>문제 5</S.Title>
         <S.Content>
           강관훈은 과외생에게 이상한 사칙연산을 가르치는 중이다. <br />
           이 사람이 말하고 싶은 사칙연산은 대체 뭘까? <br />

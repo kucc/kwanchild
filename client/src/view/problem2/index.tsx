@@ -17,7 +17,9 @@ const Problem2: React.FC = () => {
     <S.Problem2>
       <S.ProblemLayout>
         <S.Title>문제 2</S.Title>
-        <S.Content>문제 내용이 들어갑니다</S.Content>
+        <S.Content>
+          어떻게 다음문제로 넘어갈까요? 개발자들의 머릿속을 들여다 보세요!{" "}
+        </S.Content>
         <S.Answer onClick={goNext}>여기를 누르는 게 답 !!!</S.Answer>
       </S.ProblemLayout>
     </S.Problem2>
