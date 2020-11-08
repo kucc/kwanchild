@@ -18,7 +18,7 @@ const Problem3: React.FC = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        answer: userAnswer,
+        answer: userAnswer.toLowerCase(),
       }),
     });
     if (!result.ok) {
