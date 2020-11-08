@@ -44,13 +44,13 @@ const userService = {
     await userRepository.save(updatedUser);
   },
 
-  getTop10: async () => {
+  getRanking: async (num: number) => {
     const userRepository = getRepository(UserEntity);
     const top10 = userRepository
       .createQueryBuilder("User")
       .where("User.totalTime IS NOT NULL")
       .orderBy("User.totalTime", "ASC")
-      .limit(10)
+      .limit(num)
       .getMany();
 
     return top10;

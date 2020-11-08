@@ -5,7 +5,7 @@ const RankRouter = express.Router();
 
 RankRouter.get("/", async (req: Request, res: Response) => {
   try {
-    const top10 = await userService.getTop10();
+    const top10 = await userService.getRanking(20);
     res.json(top10);
   } catch (e) {
     res.status(400).send({ error: e.message });
