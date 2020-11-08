@@ -13,7 +13,7 @@ const Problem5: React.FC = () => {
     });
 
     if (!result.ok) {
-      alert("뭔가 단단히 잘못됨");
+      alert("주작하지 마세요 ㅠㅠ");
       return;
     }
 

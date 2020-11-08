@@ -40,6 +40,8 @@ const userService = {
     const now = new Date();
     const playTime = (now.getTime() - user.startTime.getTime()) / 1000;
 
+    if (playTime < 60) throw new Error("조작질 금지!");
+
     const updatedUser = userRepository.merge(user, { totalTime: playTime });
     await userRepository.save(updatedUser);
   },
