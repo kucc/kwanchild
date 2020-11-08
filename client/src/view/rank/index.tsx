@@ -22,7 +22,6 @@ const Rank: React.FC = () => {
       });
 
       if (!result.ok) {
-        alert("서버 죽음");
         return;
       }
       const { time } = await result.json();
