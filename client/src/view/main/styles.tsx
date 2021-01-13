@@ -46,18 +46,17 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled.button`
   text-align: center;
-  width: 20rem;
+  width: 15rem;
   height: 5rem;
-  margin-bottom: 1.5rem;
+  margin: 2rem 1rem 1.5rem 1rem;
   background-color: ${THEME_COLOR.PRIMARY};
   border-radius: 3rem;
   border: 0;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.3rem;
   font-weight: 700;
   transition: all 0.2s ease;
-  margin-top: 2rem;
 `;
 
 export const NameContainer = styled.div`

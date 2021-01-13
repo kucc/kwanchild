@@ -4,7 +4,6 @@ import * as S from "./styles";
 import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Modal from "../../component/modal";
-import { middleware } from "yargs";
 import PAGE_URL from "../../page-config";
 
 const Main: React.FC = () => {
@@ -60,6 +59,10 @@ const Main: React.FC = () => {
     history.push(PAGE_URL.prob1);
   }, []);
 
+  const moveToRank = () => {
+    history.push("./rank");
+  };
+
   return (
     <>
       <S.Main>
@@ -80,7 +83,10 @@ const Main: React.FC = () => {
               <S.NameConfirm onClick={confirmName}>확인</S.NameConfirm>
             </S.NameContainer>
           )}
-          <S.Button onClick={toggleDevModal}>??</S.Button>
+          <S.NameContainer>
+            <S.Button onClick={moveToRank}>랭킹</S.Button>
+            <S.Button onClick={toggleDevModal}>개발자들</S.Button>
+          </S.NameContainer>
         </S.ButtonContainer>
       </S.Main>
       <Modal show={showDevModal} toggleModal={toggleDevModal}>
