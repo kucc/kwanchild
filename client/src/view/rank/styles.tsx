@@ -1,16 +1,12 @@
-import styled, { keyframes } from "styled-components/macro";
-import { Link } from "react-router-dom";
-
-import { fadeIn } from "../../animation/keyframe";
-import { THEME_COLOR, BREAKPOINT, STATIC_URL } from "../../constant";
+import styled from "styled-components/macro";
+import { THEME_COLOR, STATIC_URL } from "../../constant";
 
 export const Rank = styled.div`
   width: 100%;
   height: 100%;
-  margin-top: 0rem;
+  min-height: 100vh;
 
   background-image: url(${STATIC_URL.BACKGROUND});
-  position: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

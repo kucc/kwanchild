@@ -1,9 +1,7 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { STATIC_URL } from "../../constant";
 
-import RankItem from "../../component/rank-item";
 import RankList from "../../component/rank-list";
 import * as S from "./styles";
 
